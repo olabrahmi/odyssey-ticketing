@@ -17,31 +17,31 @@ dependencies:
 
 devDependencies:
   '@eslint/eslintrc':
-    specifier: ^3
+    specifier: ^3.3.1
     version: 3.3.1
   '@tailwindcss/postcss':
-    specifier: ^4
+    specifier: ^4.1.11
     version: 4.1.11
   '@types/node':
-    specifier: ^20
+    specifier: ^20.19.10
     version: 20.19.10
   '@types/react':
-    specifier: ^19
+    specifier: ^19.1.10
     version: 19.1.10
   '@types/react-dom':
-    specifier: ^19
+    specifier: ^19.1.7
     version: 19.1.7(@types/react@19.1.10)
   eslint:
-    specifier: ^9
+    specifier: ^9.33.0
     version: 9.33.0
   eslint-config-next:
     specifier: 15.4.6
     version: 15.4.6(eslint@9.33.0)(typescript@5.9.2)
   tailwindcss:
-    specifier: ^4
+    specifier: ^4.1.11
     version: 4.1.11
   typescript:
-    specifier: ^5
+    specifier: ^5.9.2
     version: 5.9.2
 
 packages:
