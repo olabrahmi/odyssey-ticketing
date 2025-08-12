@@ -1,0 +1,32 @@
+generator client {
+    provider        = "prisma-client-js"
+    previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+enum TicketType {
+    PROFESSIONAL
+    STUDENT
+    SPEAKER
+    SPONSOR
+    ORGANIZER
+    OTHER
+}
+
+model Ticket {
+    id           String @id @default(uuid())
+    ticketNumber Int    @unique @default(autoincrement())
+
+    name  String
+    email String     @unique
+    type  TicketType
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("tickets")
+}

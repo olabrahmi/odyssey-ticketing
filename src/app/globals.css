@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -19,8 +19,27 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  button,
+  input,
+  select {
+    @apply transition duration-400;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  input,
+  select {
+    @apply rounded-md border-2 border-gray-800 px-2 py-1 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none;
+  }
+
+  button {
+    @apply cursor-pointer rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600;
+
+    &:disabled {
+      @apply cursor-not-allowed opacity-50;
+    }
+  }
 }
