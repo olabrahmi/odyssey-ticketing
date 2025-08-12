@@ -1,7 +1,7 @@
-import ws from "ws";
-import { PrismaClient } from "@prisma/client";
-import { PrismaNeon } from "@prisma/adapter-neon";
-import { neonConfig } from "@neondatabase/serverless";
+import ws from 'ws';
+import { PrismaNeon } from '@prisma/adapter-neon';
+import { neonConfig } from '@neondatabase/serverless';
+import { PrismaClient } from '@prisma/client';
 
 neonConfig.webSocketConstructor = ws;
 neonConfig.poolQueryViaFetch = true;
@@ -16,6 +16,6 @@ const adapter = new PrismaNeon({
 
 const prisma = globalThis.prisma || new PrismaClient({ adapter });
 
-if (process.env.NODE_ENV === "development") globalThis.prisma = prisma;
+if (process.env.NODE_ENV === 'development') globalThis.prisma = prisma;
 
 export { prisma };

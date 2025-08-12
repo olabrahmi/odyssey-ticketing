@@ -1,15 +1,9 @@
-import { prisma } from "@/lib/prisma";
-import CreateUserButton from "./_components/create-user-button";
+import Form from './_components/form';
 
-export default async function Home() {
-  const users = await prisma.user.findMany();
-
+export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <h1>Users</h1>
-      <pre>{JSON.stringify(users, null, 2)}</pre>
-
-      <CreateUserButton />
+    <div className="grid h-screen w-full place-items-center p-20">
+      <Form />
     </div>
   );
 }
